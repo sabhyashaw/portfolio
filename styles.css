@@ -1,13 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 header {
-    background: #f8db02;
-    color: #ffffff;
+    background: #333;
+    color: #fff;
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -15,48 +16,137 @@ header {
     z-index: 1000;
 }
 
-nav ul {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav {
     list-style: none;
-    text-align: center;
+    display: flex;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
+.nav li {
     margin: 0 10px;
 }
 
-nav ul li a {
+.nav li a {
     color: #fff;
     text-decoration: none;
     padding: 5px 10px;
     transition: background 0.3s;
 }
 
-nav ul li a:hover {
+.nav li a:hover {
     background: #555;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .full-page {
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center; 
+    align-items: center;
+    text-align: center;
     padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.full-page.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #home {
-    background: #f4f4f4;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
 }
 
-#about, #projects, #contact {
-    background: #e2e2e2;
+#about, #skills, #projects, #resume, #contact {
+    background: linear-gradient(to right, #76b852, #8dc26f);
+    color: white;
 }
 
-#mypic{
-    align-content: left;
+#about {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+#skills {
+    background: linear-gradient(to right, #f953c6, #b91d73);
+}
+
+#projects {
+    background: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+#resume {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+#contact {
+    background: linear-gradient(to right, #ee9ca7, #ffdde1);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin: 5px 0;
+}
+
+.project {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #555;
 }
 
 footer {
@@ -64,7 +154,44 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+    }
+    
+    .nav li {
+        margin: 10px 0;
+    }
+    
+    .nav.no-search {
+        display: flex;
+    }
 }

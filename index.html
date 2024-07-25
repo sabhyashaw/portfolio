@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav no-search">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#Resume">Resume</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -21,8 +26,8 @@
     <section id="home" class="full-page">
         <div class="content">
             <h1>Welcome to My Portfolio</h1>
-            <div id="mypic"><img id="me" src="IMG_20240723_005054.png" width="200px"></div>
             <p>I am a B.Tech 2nd year undergraduate in CSE with specialization in Data Science.</p>
+            <img src="sabhya.png" width="200px">
         </div>
     </section>
     
@@ -33,18 +38,59 @@
         </div>
     </section>
     
-    <section id="Resume" class="full-page">
+    <section id="skills" class="full-page">
+        <div class="content">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Data Analysis</li>
+                <li>Machine Learning</li>
+                <li>HTML & CSS</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+    </section>
+    
+    </section>
+    
+    <section id="resume" class="full-page">
         <div class="content">
             <h2>Resume</h2>
-            <a href="https://drive.google.com/file/d/1XL11zJ8BOoWtb2F5q7r3LCZ4NJ8h0Zyp/view?usp=drive_link" target="_blank">Click here to download my Resume</a>
+            <p><a href="sabhya shawCV Resume.pdf" target="_blank">Download My Resume</a></p>
         </div>
     </section>
     
     <section id="contact" class="full-page">
         <div class="content">
             <h2>Contact</h2>
-            <p>You can reach me at: <a href="mailto:your-email@example.com">sabhyashaw18@gmail.com</a></p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
         </div>
     </section>
+    
+    <footer>
+        <p>&copy; 2024 Sabhya Shaw. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://github.com/sabhyashaw" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/sabhya-shaw-67853a214/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/KashyapShaggy" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
